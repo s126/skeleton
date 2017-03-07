@@ -10,10 +10,17 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
 
 
-    <package name="default" extends="json-default">
+    <package name="root" extends="json-default">
+        <global-results>
+            <result name="error">/WEB-INF/view/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error" />
+        </global-exception-mappings>
+      
 		<!-- 在这里写你的 actions 等 -->
     </package>
-
 
 </struts>
 
