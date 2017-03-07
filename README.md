@@ -11,14 +11,14 @@
 ## 创建 Eclipse 项目
 
 1. 打开 eclipse，创建动态 Web 项目
-2. 将 skeleton 中的 src/WebContent 文件夹覆盖创建的 Web 项目中
+2. 将 skeleton 中的 src, WebContent 文件夹覆盖到创建的 Web 项目中
 3. 修改项目名字、数据库的用户名密码、spring 的扫描路径
 
 
 ## 实现项目
 
-1. 创建 Entity 类
-2. 创建 DAO 类
+1. 创建 Entity 类。(注意，到时候，如果考试要求用 xml 的方式配置，那么。。。)
+2. 创建 DAO 类，可以选择继承 BaseDao
 3. 创建 Service 类 (注意 @Transactional)
 4. 创建 Action 类 (注意 @Scope，还有异常处理)
 5. 创建 Jsp 文件
