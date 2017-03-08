@@ -31,3 +31,54 @@
 2. 要有异常处理
 3. 要有一定注释
 4. 一定要有数据库的 sql 文件
+
+
+# 常见错误
+
+## ClassNotFoundException
+
+可能原因：
+1. Jar 包缺失
+2. Jar 包没有配正确
+
+解决方案：
+1. 自己将缺失的 Jar 包加进去，或者重新配置
+2. 老老实实把这个工程 lib 文件夹下的 jar 包拷贝到你的项目中！！！【强烈建议】
+
+
+## NullPointerException
+
+这是空指针异常。意思是，有些参数没有赋值成功，所以是 null.
+
+
+解决方案：
+检查为什么没有赋值成功，更改之！
+
+
+## More than one table found in namespace (,): ...
+
+原因：
+在不同用户下存在相同名字的表，hibernate 解析出错。
+
+解决方案：
+强烈建议在定义实体类的时候，指定相应命名空间（也就是数据库的用户名）：
+
+```
+@Entity
+@Table(catalog = "xiaomi")
+public class Person {...}
+
+```
+
+
+
+## 各种 404 错误
+
+原因不详，但基本都是 struts.xml 配置问题
+
+解决方案：
+1. 检查你请求的 url 是不是写错了，如果粗了，更正
+2. 检查你的 action 是不是配对了。尤其注意，action 中的 class 要首字母小写！
+3. 其他，待补充。
+
+
